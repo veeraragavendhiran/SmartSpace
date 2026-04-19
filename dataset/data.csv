@@ -1,0 +1,11 @@
+sound_level,vibration,label
+1024,0,Normal
+1300,0,Normal
+950,0,Normal
+1650,0,Warning
+2200,0,Warning
+2900,0,Warning
+3400,0,Danger
+4096,0,Danger
+1200,1,Danger
+3000,1,Danger

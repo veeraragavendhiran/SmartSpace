@@ -1,0 +1,16 @@
+SmartSpace AEISA Demo Script
+
+[0:00 - 0:10] Introduction
+"Hello, this is the demonstration of SmartSpace, our TinyML autonomous acoustic and vibration signature recognition system built strictly for edge optimization."
+
+[0:10 - 0:25] Circuit design 
+"Our Wokwi circuit uses an ESP32 alongside a linear potentiometer to simulate analog audio waveforms and a pushbutton for digital vibration fault simulation."
+
+[0:25 - 0:45] Simulation (Normal & Warning)
+"As we run the simulation, a low analog reading implies Normal operation. Notice how the serial monitor reflects 'NORMAL'. As we increase the sound to the midrange (above 1500), our adaptive threshold system flags this as 'WARNING'. The red LED lights up to notify the operator."
+
+[0:45 - 1:10] Simulation (Danger)
+"If sound exceeds extreme tolerances, or if the vibration logic goes HIGH, a 'DANGER' fault occurs. You can see the LED light up fully while the buzzer sounds simultaneously. The system has automatically buffered this log event into local flash."
+
+[1:10 - 1:20] Output/Conclusion
+"This local processing avoids cloud latency and protects vital infrastructure immediately in real-time."
