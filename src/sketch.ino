@@ -23,7 +23,7 @@ int bufferIndex = 0;
 void setup() {
   Serial.begin(115200);
 
-  pinMode(VIB_PIN, INPUT);
+  pinMode(VIB_PIN, INPUT_PULLUP);
   pinMode(LED_PIN, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
   
@@ -42,7 +42,7 @@ void logEvent(int state, float snd) {
 void loop() {
   // Read inputs
   soundValue = analogRead(SOUND_PIN);
-  vibrationValue = digitalRead(VIB_PIN);
+  vibrationValue = !digitalRead(VIB_PIN); // Inverted: pull-up means LOW when pressed
   
   // Exponential Smoothing for Prediction
   smoothedSound = 0.8 * smoothedSound + 0.2 * soundValue;
