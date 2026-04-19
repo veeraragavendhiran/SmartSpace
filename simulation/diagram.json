@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Antigravity",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led_warn", "top": -80, "left": 100, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "led_crit", "top": -80, "left": 150, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": -120, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_mic", "top": 120, "left": -200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_vib", "top": 200, "left": -200, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led_warn:A", "esp:2", "green", [ "v0" ] ],
+    [ "led_warn:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led_crit:A", "esp:4", "red", [ "v0" ] ],
+    [ "led_crit:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "buzzer:1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "buzzer:2", "esp:5", "purple", [ "v0" ] ],
+    [ "pot_mic:SIG", "esp:34", "blue", [ "v0" ] ],
+    [ "pot_mic:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot_mic:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot_vib:SIG", "esp:35", "orange", [ "v0" ] ],
+    [ "pot_vib:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot_vib:GND", "esp:GND.1", "black", [ "v0" ] ]
+  ]
+}
