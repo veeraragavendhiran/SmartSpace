@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "SmartSpace Project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0 },
+    
+    { "type": "wokwi-led", "id": "led", "top": -40, "left": 200, "attrs": { "color": "red" } },
+    
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": 60, "left": 200 },
+    
+    { "type": "wokwi-pushbutton", "id": "vibration", "top": 120, "left": 200 },
+    
+    { "type": "wokwi-slide-potentiometer", "id": "sound", "top": -120, "left": 200 }
+  ],
+  "connections": [
+    [ "esp:23", "led:A", "green" ],
+    [ "led:C", "esp:GND", "black" ],
+
+    [ "esp:22", "buzzer:1", "green" ],
+    [ "buzzer:2", "esp:GND", "black" ],
+
+    [ "esp:26", "vibration:1", "green" ],
+    [ "vibration:2", "esp:GND", "black" ],
+
+    [ "esp:34", "sound:SIG", "green" ],
+    [ "sound:VCC", "esp:3V3", "red" ],
+    [ "sound:GND", "esp:GND", "black" ]
+  ]
+}
